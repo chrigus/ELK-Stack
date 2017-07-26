@@ -18,7 +18,7 @@ Oder über den Windows-Installer (v5.5.0.24)
 	https://github.com/gigi81/elk-windows-installer/releases
 
 3.1	Verschieben der Logstash-Konfigurations-Files in den logstash\bin Ordner (pro benötigte Pipe eine Datei).
-	
+
 	Logstash-Konfigurationsdateien sind:
 	- logstash-AuthLog.conf
 	- logstash-EWSTracerRnR.conf
@@ -45,7 +45,9 @@ dazu erstellt man einen im Logstash-Verzeichnis einen Temp-Ordner mit je einem U
 5.2	Starten der Logstash-Pipes über das CMD. 
 
 CMD-Befehle:
+
 cd C:\ELK-Stack\logstash\bin
+
 logstash -f ./logstash-LogfilesRnR.conf --config.reload.automatic --path.data C:\ELK-Stack\logstash\temp\MultipipeStore\ApiPipeStore
 logstash -f ./logstash-EWSTracerRnR.conf --config.reload.automatic --path.data C:\ELK-Stack\logstash\temp\MultipipeStore\EwsTracerPipeStore
 logstash -f ./logstash-AuthLog.conf --config.reload.automatic --path.data C:\ELK-Stack\logstash\temp\MultipipeStore\AuthPipeStore
@@ -54,7 +56,8 @@ logstash -f ./logstash-AuthLog.conf --config.reload.automatic --path.data C:\ELK
 6.	Über http://localhost:9200/logstash-* sollten alle vorhandenen Daten, welche mittels Logstash übertragen wurden, angezeigt werden.
 
 7.	Über cURL-Commands kann ElasticSearch angepasst werden. --> Dazu muss die cURL-Erweiterung für CMD installiert werden.
-	z.B. - C:\curl -XDELETE localhost:9200/Logstash-*
+	z.B. - 
+	C:\curl -XDELETE localhost:9200/Logstash-*
 
 
 8.	Nun kann über http://localhost:5601 Kibana aufgerufen werden, um die Daten weiter aufzubereiten.
