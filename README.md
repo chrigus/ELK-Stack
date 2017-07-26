@@ -49,7 +49,9 @@ CMD-Befehle:
 cd C:\ELK-Stack\logstash\bin
 
 logstash -f ./logstash-LogfilesRnR.conf --config.reload.automatic --path.data C:\ELK-Stack\logstash\temp\MultipipeStore\ApiPipeStore
+
 logstash -f ./logstash-EWSTracerRnR.conf --config.reload.automatic --path.data C:\ELK-Stack\logstash\temp\MultipipeStore\EwsTracerPipeStore
+
 logstash -f ./logstash-AuthLog.conf --config.reload.automatic --path.data C:\ELK-Stack\logstash\temp\MultipipeStore\AuthPipeStore
 
 
